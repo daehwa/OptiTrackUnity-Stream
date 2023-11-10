@@ -8,8 +8,7 @@ using UnityEngine;
 
 public class OptitrackStreamClient : MonoBehaviour
 {
-    // Classroom computer's ipaddress
-    private string server_ipaddress = "172.26.98.224";
+    private string server_ipaddress = "172.26.98.224"; // Classroom computer's ipaddress
 
     private TcpClient socketConnection;     
     private Thread clientReceiveThread;
@@ -29,10 +28,13 @@ public class OptitrackStreamClient : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.Space)) {
         // }
         if(message_queue.Count > 0){
-            SetOptiTrackObjectProperties(message_queue[0]);
+            var message = message_queue[0];
             message_queue.RemoveAt(0);
-            while(message_queue.Count > 10){
-                message_queue.RemoveAt(0);
+            if (message != null){
+                SetOptiTrackObjectProperties(message);
+                while(message_queue.Count > 10){
+                    message_queue.RemoveAt(0);
+                }
             }
         }        
     }
@@ -124,6 +126,7 @@ public class OptitrackStreamClient : MonoBehaviour
     }
 
     private string MessageParerName(string message){
+        Debug.Log(message);
         string name = message.Split("(")[0];
         return name;
     }

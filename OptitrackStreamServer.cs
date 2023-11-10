@@ -35,7 +35,7 @@ public class OptitrackStreamServer : MonoBehaviour
     private void ListenForIncommingRequests () {        
         try {           
             // Create listener on localhost port 8052.          
-            tcpListener = new TcpListener(IPAddress.Parse("127.0.0.1"), 8052);          
+            tcpListener = new TcpListener(IPAddress.Parse("0.0.0.0"), 8052);          
             tcpListener.Start();              
             Debug.Log("Server is listening");
             while(true){

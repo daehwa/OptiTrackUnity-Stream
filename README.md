@@ -8,7 +8,7 @@ After setting this up, the class room computer with OptiTrack becomes a server, 
 
 1. Connect to WiFi (CMU Secure).
 
-2. Check ip address for later use in your own laptop.
+2. Check ip address of the classroom computer. This will be used in your own laptop later.
 	- Click "Search" next to Windows icon on the bottom left.
 	- Search "Command Prompt"
 	- Type `ipconfig` then enter.

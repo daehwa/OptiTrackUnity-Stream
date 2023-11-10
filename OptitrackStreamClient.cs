@@ -8,8 +8,7 @@ using UnityEngine;
 
 public class OptitrackStreamClient : MonoBehaviour
 {
-    // private string server_ipaddress = "172.26.98.224"; // Classroom computer's ipaddress
-    private string server_ipaddress = "localhost";
+    private string server_ipaddress = "172.26.98.224"; // Classroom computer's ipaddress
 
     private TcpClient socketConnection;     
     private Thread clientReceiveThread;
